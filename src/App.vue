@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <component :is="connected ? 'UniversalLayout' : 'SocketConnect'" @socketConnect="connected=$event"></component>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UniversalLayout from '@/view/UniversalLayout.vue';
+import SocketConnect from '@/view/SocketConnect.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { UniversalLayout, SocketConnect },
+  data() {
+    return {
+      connected: false,
+      // connected: true,
+    }
+  },
 }
 </script>
 
 <style>
+body {
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

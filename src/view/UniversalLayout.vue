@@ -9,8 +9,8 @@
     </div>
 
     <DPad class="d-pad" />
-    <VJoystick class="right-axis" type="RIGHT_AXIS"/>
-    <VJoystick class="left-axis" type="LEFT_AXIS"/>
+    <VJoystick class="right-axis" type="RIGHT_AXIS" />
+    <VJoystick class="left-axis" type="LEFT_AXIS" />
     <ABXY class="abxy" />
   </div>
 </template>

@@ -29,7 +29,17 @@ export default {
   emits: ["socketConnect"],
   components: {},
   watch: {},
-  mounted() { },
+  mounted() {
+    if (localStorage.getItem("serverConfig")) {
+      let serverConfig = JSON.parse(localStorage.getItem("serverConfig"))
+      this.ipAddress = serverConfig.ipAddress
+      this.port = serverConfig.port
+    }
+  },
+  beforeUnmount() {
+    let serverConfig = { ipAddress: this.ipAddress, port: this.port }
+    localStorage.setItem("serverConfig", JSON.stringify(serverConfig))
+  },
   methods: {
     async createConnection() {
       let url = this.ipAddress + ':' + this.port
@@ -42,6 +52,8 @@ export default {
       } catch (error) {
         console.log(error);
       }
+      document.body.requestFullscreen()
+      screen.orientation.lock('landscape')
     }
   }
 }

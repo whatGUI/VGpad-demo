@@ -12,7 +12,6 @@ export default {
   data() {
     return {
       connected: false,
-      // connected: true,
     }
   },
 }

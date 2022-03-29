@@ -42,7 +42,6 @@ export default {
   .button {
     width: 100px;
     height: 30px;
-    /* border-radius: 10%; */
     line-height: 30px;
   }
 </style>

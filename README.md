@@ -1,4 +1,4 @@
-# vjoystick
+# VGpad
 
 ## Project setup
 ```

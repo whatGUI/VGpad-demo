@@ -113,7 +113,7 @@ export default {
   margin-bottom: 5px;
   text-align: start;
 }
-@media (orientation: portrait) {
+@media (orientation: portrait),(max-width:500px) {
   .wrapper {
     width: 90vw;
   }

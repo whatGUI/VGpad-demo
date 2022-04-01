@@ -2,9 +2,9 @@ import { io } from "socket.io-client";
 let socket;
 
 export default {
-  connect(url) {
+  connect() {
     return new Promise((resolve, reject) => {
-      socket = io(url, {
+      socket = io({
         transports: ["websocket"],
         reconnection: false,
         timeout: 3000,
@@ -24,7 +24,7 @@ export default {
       }
       socket.on("controller ready", (isReady) => {
         if (isReady === true) {
-          resolve();
+          resolve(true);
         } else {
           reject("controller not ready");
         }

@@ -2,9 +2,9 @@ import { io } from "socket.io-client";
 let socket;
 
 export default {
-  connect() {
+  connect(url) {
     return new Promise((resolve, reject) => {
-      socket = io({
+      socket = io(url,{
         transports: ["websocket"],
         reconnection: false,
         timeout: 3000,
